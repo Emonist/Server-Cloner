@@ -74,8 +74,8 @@ pip install aiohttp colorama
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Emonist/Server-Cloner-v2.git
-cd Server-Cloner-v2
+git clone https://github.com/Emonist/Server-Cloner.git
+cd Server-Cloner
 ```
 
 ### 2. Install Dependencies
@@ -174,7 +174,7 @@ Adjust MAXWORKERS at the top of main.py to tune speed vs. rate-limit tolerance.
 ## Project Structure
 
 ```
-Server-Cloner-v2/
+Server-Cloner/
 │
 ├── main.py          ← Core cloner logic (async, aiohttp, colorama)
 └── README.md        ← This file
@@ -202,7 +202,7 @@ Server-Cloner-v2/
 
 If this tool helped you, drop a **star** — it helps a lot!
 
-[![Star on GitHub](https://img.shields.io/github/stars/Emonist/Server-Cloner-v2?style=for-the-badge&logo=github&color=yellow)](https://github.com/Emonist/Server-Cloner-v2/stargazers)
+[![Star on GitHub](https://img.shields.io/github/stars/Emonist/Server-Cloner?style=for-the-badge&logo=github&color=yellow)](https://github.com/Emonist/Server-Cloner/stargazers)
 
 ---
 
