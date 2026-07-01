@@ -19,9 +19,9 @@
 
 ## Overview
 
-**Server Cloner v2** is a blazing-fast, async-powered Discord server cloning tool built with Python. It replicates an entire Discord server's structure including roles, categories, and channels into a destination server with surgical precision and zero manual effort.
+**Server Cloner v2** is a blazing-fast, async-powered Discord server cloning tool built with Python. It replicates an entire Discord server's structure — including roles, categories, and channels — into a destination server with surgical precision and zero manual effort.
 
-Built for developers, power users, and community managers who need an exact server structure transferred in seconds.
+> Built for developers, power users, and community managers who need an exact server structure transferred in seconds.
 
 ---
 
@@ -30,19 +30,19 @@ Built for developers, power users, and community managers who need an exact serv
 ```
 Server Cloner v2
 │
-├── Token Validation Layer       Bot + User token auth via Discord API v10
-├── Async HTTP Engine            aiohttp-powered with rate-limit handling
-├── Semaphore Concurrency        Controlled parallelism (10 workers default)
+├── Token Validation Layer       ← Bot + User token auth via Discord API v10
+├── Async HTTP Engine            ← aiohttp-powered with rate-limit handling
+├── Semaphore Concurrency        ← Controlled parallelism (10 workers default)
 │
 ├── Clone Pipeline
-│   ├── 1. Wipe Destination      Optional: nuke channels & deletable roles
-│   ├── 2. Clone Roles           Position-aware role replication
-│   ├── 3. Clone Categories      Parent structure with permission overwrite mapping
-│   ├── 4. Clone Channels        Text, Voice, Forum, Announcement types
-│   ├── 5. Apply Server Info     Name, icon (with base64 transfer), description
-│   └── 6. Verify + Repair       Position & parent mismatch auto-fix
+│   ├── 1. Wipe Destination      ← Optional: nuke channels & deletable roles
+│   ├── 2. Clone Roles           ← Position-aware role replication
+│   ├── 3. Clone Categories      ← Parent structure with permission overwrite mapping
+│   ├── 4. Clone Channels        ← Text, Voice, Forum, Announcement types
+│   ├── 5. Apply Server Info     ← Name, icon (with base64 transfer), description
+│   └── 6. Verify + Repair       ← Position & parent mismatch auto-fix
 │
-└── CLI Interface                Live progress bars, tables, styled output
+└── CLI Interface                ← Live progress bars, tables, styled output
 ```
 
 ---
@@ -97,10 +97,10 @@ pip install aiohttp colorama
 
 ### 3. Prepare Your Bot
 
-- Create a bot at discord.com/developers
-- Enable Server Members Intent and Message Content Intent
-- Set permissions: Administrator (or Manage Channels + Manage Roles)
-- Invite the bot to the destination server:
+- Create a bot at [discord.com/developers](https://discord.com/developers/applications)
+- Enable **Server Members Intent** and **Message Content Intent**
+- Set permissions: `Administrator` (or `Manage Channels` + `Manage Roles`)
+- Invite the bot to the **destination** server:
 
 ```
 https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot
@@ -122,20 +122,20 @@ python main.py
   Bot Token:  ••••••••••••••••••••
   User Token: ••••••••••••••••••••
 
-  Bot BotName#0000 authenticated
-  User UserName#0000 authenticated
+  ✓  Bot BotName#0000 authenticated
+  ✓  User UserName#0000 authenticated
 
 --- source server -------------------------------------------
 
   Source Server ID: 123456789012345678
 
-  SERVER NAME (123456789012345678)
+  ✓  SERVER NAME (123456789012345678)
      members: 1500  |  roles: 12  |  channels: 34
 
 --- destination server --------------------------------------
 
   Destination Server ID: 987654321098765432
-  bot is in DESTINATION SERVER
+  ✓  bot is in DESTINATION SERVER
 
   Wipe destination before cloning? [Y/n]: Y
 
@@ -148,10 +148,10 @@ python main.py
 --- verification --------------------------------------------
 --- summary -------------------------------------------------
 
-  roles cloned:      12/12
-  categories cloned:  5/5
-  channels cloned:   29/29
-  done — zero errors
+  ✓  roles cloned:      12/12
+  ✓  categories cloned:  5/5
+  ✓  channels cloned:   29/29
+  ✓  done — zero errors
 ```
 
 ---
@@ -171,11 +171,11 @@ Adjust MAXWORKERS at the top of main.py to tune speed vs. rate-limit tolerance.
 
 | Type ID | Type | Support |
 |---|---|---|
-| 0 | Text Channel | topic, NSFW, slowmode |
-| 2 | Voice Channel | bitrate, user limit |
-| 4 | Category | |
-| 5 | Announcement | |
-| 15 | Forum | |
+| 0 | Text Channel | ✅ topic, NSFW, slowmode |
+| 2 | Voice Channel | ✅ bitrate, user limit |
+| 4 | Category | ✅ |
+| 5 | Announcement | ✅ |
+| 15 | Forum | ✅ |
 
 ---
 
@@ -197,39 +197,39 @@ Adjust MAXWORKERS at the top of main.py to tune speed vs. rate-limit tolerance.
 ```
 Server-Cloner-v2/
 │
-├── main.py          Core cloner logic (async, aiohttp, colorama)
-└── README.md        This file
+├── main.py          ← Core cloner logic (async, aiohttp, colorama)
+└── README.md        ← This file
 ```
 
 ---
 
 ## Security Notice
 
-Never share your user token. It grants full access to your Discord account. This tool stores tokens only in memory during runtime they are never saved to disk.
+> **WARNING:** Never share your user token. It grants full access to your Discord account. This tool stores tokens only in memory during runtime — they are never saved to disk.
 
-- Do not commit tokens to version control
-- This tool uses user tokens only for read access (fetching source server structure)
+- Do **not** commit tokens to version control
+- This tool uses user tokens only for **read** access (fetching source server structure)
 
 ---
 
 ## Legal / ToS Disclaimer
 
-Using self-bot features (user tokens) may violate Discord's Terms of Service. Use this tool only on servers you own or have explicit permission to clone. The author holds no responsibility for any account penalties.
+> **CAUTION:** Using self-bot features (user tokens) may violate [Discord's Terms of Service](https://discord.com/terms). Use this tool only on servers you own or have explicit permission to clone. The author holds no responsibility for any account penalties.
 
 ---
 
 ## Built With
 
-- Python 3.10+ Core language
-- aiohttp Async HTTP client
-- colorama Terminal styling
-- Discord API v10 Target API
+- **[Python 3.10+](https://python.org)** — Core language
+- **[aiohttp](https://docs.aiohttp.org/)** — Async HTTP client
+- **[colorama](https://pypi.org/project/colorama/)** — Terminal styling
+- **[Discord API v10](https://discord.com/developers/docs/reference)** — Target API
 
 ---
 
 ## Support
 
-If this tool helped you, drop a star it helps a lot!
+If this tool helped you, drop a **star** — it helps a lot!
 
 [![Star on GitHub](https://img.shields.io/github/stars/Emonist/Server-Cloner-v2?style=for-the-badge&logo=github&color=yellow)](https://github.com/Emonist/Server-Cloner-v2/stargazers)
 
@@ -239,7 +239,7 @@ If this tool helped you, drop a star it helps a lot!
 
 **Made by Irenic**
 
-*Server Cloner v2 precision cloning, zero compromise.*
+*Server Cloner v2 — precision cloning, zero compromise.*
 
 </div>
 ```
