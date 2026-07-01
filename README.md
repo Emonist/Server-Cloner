@@ -1,4 +1,3 @@
-```markdown
 <div align="center">
 
 # Server Cloner v2
@@ -15,15 +14,11 @@
 
 </div>
 
----
-
 ## Overview
 
 **Server Cloner v2** is a blazing-fast, async-powered Discord server cloning tool built with Python. It replicates an entire Discord server's structure — including roles, categories, and channels — into a destination server with surgical precision and zero manual effort.
 
-> Built for developers, power users, and community managers who need an exact server structure transferred in seconds.
-
----
+Built for developers, power users, and community managers who need an exact server structure transferred in seconds.
 
 ## Architecture
 
@@ -45,12 +40,10 @@ Server Cloner v2
 └── CLI Interface                ← Live progress bars, tables, styled output
 ```
 
----
-
 ## Features
 
 | Feature | Description |
-|---|---|
+|---------|-------------|
 | Full Server Clone | Roles, Categories, Channels cloned in correct order |
 | Async + Concurrent | 10 parallel workers via asyncio + aiohttp |
 | Rate Limit Safe | Auto-detects 429s and waits with precise retry_after |
@@ -61,8 +54,6 @@ Server Cloner v2
 | Terminal UI | Styled panels, progress bars, live status |
 | Smart Wipe Mode | Skips system channels and bot-managed roles |
 | Position Ordering | Roles and channels placed in correct hierarchy |
-
----
 
 ## Requirements
 
@@ -77,8 +68,6 @@ Install dependencies:
 ```bash
 pip install aiohttp colorama
 ```
-
----
 
 ## Getting Started
 
@@ -111,8 +100,6 @@ https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=b
 ```bash
 python main.py
 ```
-
----
 
 ## Usage Walkthrough
 
@@ -154,43 +141,35 @@ python main.py
   ✓  done — zero errors
 ```
 
----
-
 ## Configuration
 
 | Variable | Default | Description |
-|---|---|---|
+|----------|---------|-------------|
 | MAXWORKERS | 10 | Max concurrent API requests |
 | BASE | https://discord.com/api/v10 | Discord API base URL |
 
 Adjust MAXWORKERS at the top of main.py to tune speed vs. rate-limit tolerance.
 
----
-
 ## Channel Types Supported
 
 | Type ID | Type | Support |
-|---|---|---|
+|---------|------|---------|
 | 0 | Text Channel | ✅ topic, NSFW, slowmode |
 | 2 | Voice Channel | ✅ bitrate, user limit |
 | 4 | Category | ✅ |
 | 5 | Announcement | ✅ |
 | 15 | Forum | ✅ |
 
----
-
 ## Troubleshooting
 
 | Error | Cause | Fix |
-|---|---|---|
+|-------|-------|-----|
 | bot token rejected | Invalid/expired bot token | Regenerate in Developer Portal |
 | bot has no access to destination | Bot not in server | Invite bot with admin perms |
 | role creation failed | Bot role below target role | Move bot role to top of hierarchy |
 | channel fetch failed | User not in source server | Join source server with your account |
 | max retries exceeded | Network instability | Check connection and retry |
 | 429 rate limited | Too many requests | Handled automatically by the script |
-
----
 
 ## Project Structure
 
@@ -201,8 +180,6 @@ Server-Cloner-v2/
 └── README.md        ← This file
 ```
 
----
-
 ## Security Notice
 
 > **WARNING:** Never share your user token. It grants full access to your Discord account. This tool stores tokens only in memory during runtime — they are never saved to disk.
@@ -210,13 +187,9 @@ Server-Cloner-v2/
 - Do **not** commit tokens to version control
 - This tool uses user tokens only for **read** access (fetching source server structure)
 
----
-
 ## Legal / ToS Disclaimer
 
 > **CAUTION:** Using self-bot features (user tokens) may violate [Discord's Terms of Service](https://discord.com/terms). Use this tool only on servers you own or have explicit permission to clone. The author holds no responsibility for any account penalties.
-
----
 
 ## Built With
 
@@ -224,8 +197,6 @@ Server-Cloner-v2/
 - **[aiohttp](https://docs.aiohttp.org/)** — Async HTTP client
 - **[colorama](https://pypi.org/project/colorama/)** — Terminal styling
 - **[Discord API v10](https://discord.com/developers/docs/reference)** — Target API
-
----
 
 ## Support
 
