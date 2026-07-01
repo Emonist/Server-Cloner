@@ -16,7 +16,7 @@
 
 ## Overview
 
-**Server Cloner v2** is a blazing-fast, async-powered Discord server cloning tool built with Python. It replicates an entire Discord server's structure — including roles, categories, and channels — into a destination server with surgical precision and zero manual effort.
+**Server Cloner v2** is a blazing-fast, async-powered Discord server cloning tool built with Python. It replicates an entire Discord server's structure including roles, categories, and channels into a destination server with surgical precision and zero manual effort.
 
 Built for developers, power users, and community managers who need an exact server structure transferred in seconds.
 
@@ -138,7 +138,7 @@ python main.py
   ✓  roles cloned:      12/12
   ✓  categories cloned:  5/5
   ✓  channels cloned:   29/29
-  ✓  done — zero errors
+  ✓  done zero errors
 ```
 
 ## Configuration
@@ -182,7 +182,7 @@ Server-Cloner/
 
 ## Security Notice
 
-> **WARNING:** Never share your user token. It grants full access to your Discord account. This tool stores tokens only in memory during runtime — they are never saved to disk.
+> **WARNING:** Never share your user token. It grants full access to your Discord account. This tool stores tokens only in memory during runtime they are never saved to disk.
 
 - Do **not** commit tokens to version control
 - This tool uses user tokens only for **read** access (fetching source server structure)
@@ -193,14 +193,14 @@ Server-Cloner/
 
 ## Built With
 
-- **[Python 3.10+](https://python.org)** — Core language
-- **[aiohttp](https://docs.aiohttp.org/)** — Async HTTP client
-- **[colorama](https://pypi.org/project/colorama/)** — Terminal styling
-- **[Discord API v10](https://discord.com/developers/docs/reference)** — Target API
+- **[Python 3.10+](https://python.org)** Core language
+- **[aiohttp](https://docs.aiohttp.org/)** Async HTTP client
+- **[colorama](https://pypi.org/project/colorama/)** Terminal styling
+- **[Discord API v10](https://discord.com/developers/docs/reference)** Target API
 
 ## Support
 
-If this tool helped you, drop a **star** — it helps a lot!
+If this tool helped you, drop a **star** it helps a lot!
 
 [![Star on GitHub](https://img.shields.io/github/stars/Emonist/Server-Cloner?style=for-the-badge&logo=github&color=yellow)](https://github.com/Emonist/Server-Cloner/stargazers)
 
@@ -210,6 +210,6 @@ If this tool helped you, drop a **star** — it helps a lot!
 
 **Made by Irenic**
 
-*Server Cloner v2 — precision cloning, zero compromise.*
+*Server Cloner v2 precision cloning, zero compromise.*
 
 </div>
